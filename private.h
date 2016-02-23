@@ -58,6 +58,11 @@
 #define HAVE_UTMPX_H		1
 #endif /* !defined HAVE_UTMPX_H */
 
+#ifdef MKDIR_TAKES_ONE_ARG
+#include <sys/stat.h>
+#define mkdir(path,mode) mkdir(path)
+#endif
+
 #ifndef NETBSD_INSPIRED
 # define NETBSD_INSPIRED 1
 #endif
